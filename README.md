@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Timer - Control de Asistencia Digital
 
-## Getting Started
+Sistema de control de asistencia 100% digital con WhatsApp y GPS para PYMEs en México.
 
-First, run the development server:
+## Estructura del Proyecto
 
-```bash
+\`\`\`
+/app                    # Next.js App Router
+  /(public)            # Rutas públicas
+  /(dashboard)         # Rutas protegidas (próximamente)
+/components            # Componentes React
+  /ui                  # Design System (shadcn/ui)
+  /sections            # Secciones de páginas
+  /layouts             # Layouts reutilizables
+/lib                   # Utilidades
+  /api                 # Cliente API
+/types                 # TypeScript types
+/constants             # Datos mock y constantes
+/public                # Assets estáticos
+\`\`\`
+
+## Variables de Entorno
+
+Copia `.env.example` a `.env.local` y configura las variables:
+
+\`\`\`bash
+cp .env.example .env.local
+\`\`\`
+
+### Variables Requeridas:
+
+- `NEXT_PUBLIC_API_URL`: URL del backend API
+- `NEXT_PUBLIC_SUPABASE_URL`: URL de Supabase (para auth)
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`: Anon key de Supabase
+
+## Instalación
+
+\`\`\`bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+\`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Stack Tecnológico
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js 15 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- shadcn/ui
+- Lucide React (iconos)
+- Sonner (toasts)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Design System
 
-## Learn More
+Basado en PRD-Frontend-Core.md:
+- Colores: Azul primario, Verde éxito, Amarillo atención
+- Tipografía: Inter
+- Componentes: shadcn/ui personalizados
 
-To learn more about Next.js, take a look at the following resources:
+## Desarrollo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Todas las páginas públicas están en `/app/(public)`
+2. Los componentes reutilizables están en `/components`
+3. Los tipos TypeScript están en `/types`
+4. Las constantes y datos mock están en `/constants`
+5. El cliente API está en `/lib/api`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Próximos Pasos
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [ ] Landing Page
+- [ ] Pricing Page
+- [ ] Contact Page
+- [ ] Auth Pages
+- [ ] Dashboard (próximamente)
